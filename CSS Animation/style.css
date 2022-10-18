@@ -1,0 +1,41 @@
+.animation{
+
+    background-color: #d1411e;
+
+    padding: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.keyframes{
+
+    color: white;
+    animation: inProgress ease 0.5s alternate infinite;
+}
+
+@keyframes inProgress {
+
+    from{
+
+
+        opacity: 0;
+
+      
+
+    }
+
+    to{
+
+
+        opacity: 1;
+
+      
+
+       
+
+    }
+    
+}

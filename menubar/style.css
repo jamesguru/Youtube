@@ -1,0 +1,52 @@
+.menuicon{
+
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+.container{
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+.menubar{
+
+
+
+
+    display: none;
+
+    flex-direction: column;
+
+    color: #fff;
+    position: absolute;
+
+    background-color: #d1411e;
+
+    z-index: 999;
+
+    top: 0;
+
+    left: 0;
+
+    height: 100vh;
+
+    width: 20%;
+}
+
+
+.closeicon{
+
+    font-size: 35px;
+
+    color: #fff;
+
+    cursor: pointer;
+}

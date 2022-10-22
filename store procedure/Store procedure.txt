@@ -1,0 +1,24 @@
+-- INSERT INTO Users(name,email,password) 
+-- VALUES('Jully', 'jully@gmail.com','1234567890')
+-- SELECT * FROM Users
+
+CREATE PROCEDURE signup @name NVARCHAR(100), @email NVARCHAR(100), @password NVARCHAR(200)
+
+AS
+
+INSERT INTO Users(name,email,password) 
+VALUES(@name,@email,@password)
+
+GO
+
+CREATE PROCEDURE getAllUsers
+
+As 
+
+    SELECT * FROM Users
+
+GO
+
+
+EXEC signup @name='James', @email='jameskagunga15@gmail.com', @password='12345678'
+EXEC getAllUsers

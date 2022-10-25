@@ -1,0 +1,21 @@
+.container{
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin: auto 200px;
+
+    font-size: 18px;
+
+    color: #333;
+
+    
+}
+
+img{
+
+    margin-right: 20px;
+}

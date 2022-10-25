@@ -1,0 +1,45 @@
+.container {
+  background-color: #82d78a;
+  height: 10vh;
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 35px;
+  margin-left: 100px;
+}
+
+.auth {
+  margin-right: 100px;
+}
+
+.auth button {
+  background-color: #d78287;
+
+  border: none;
+
+  padding:10px;
+  color: #fff;
+
+  margin-right: 20px;
+
+  font-size: 15px;
+
+  width: 100px;
+
+}
+
+.login{
+    font-size: 20px;
+
+    font-weight: 900;
+
+    color: #fff;
+}

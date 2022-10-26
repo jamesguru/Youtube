@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+
+  align-items: center;
+}
+
+.register {
+  margin-right: 30px;
+  height: 80vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #f0d95d;
+
+  padding: 20px;
+}
+
+.register-heading {
+  height: 100px;
+
+  width: 80%;
+
+  background-color: #82d78a;
+
+  padding: 20;
+
+  color: #fff;
+}
+
+.register-heading span{
+  margin: 20px;
+  font-size: 18px;
+
+  width: 200px;
+  color: #fff;
+}
+
+label {
+  color: #82d78a;
+
+  margin: 10px;
+}
+
+input {
+  outline: none;
+
+  border: none;
+
+  padding: 10px;
+}
+
+.btn-register {
+  background-color: #d78287;
+  color: #fff;
+
+  border: none;
+
+  cursor: pointer;
+
+  padding: 10px;
+  margin: 10px;
+}
+
+span {
+  color: #82d78a;
+  cursor: pointer;
+}

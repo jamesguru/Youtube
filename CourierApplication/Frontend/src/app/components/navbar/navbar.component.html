@@ -1,12 +1,8 @@
 <div class="container">
+  <span class="logo">SendIT</span>
 
-    <span class="logo">SendIT</span>
-
-    <div class="auth">
-
-        <button>SignUp</button>
-        <span class="login">Login</span>
-
-
-    </div>
+  <div class="auth">
+    <button (click)="goToRegister()">SignUp</button>
+    <span class="login" (click)="goToLogin()">Login</span>
+  </div>
 </div>

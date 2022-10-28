@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="parcel">
+
+    <fa-icon [icon]="faHambuger" class="hambuger-icon"> </fa-icon>
+    
+
+    <div class="header">
+
+        <h1 class="header-order">YOUR ORDERS</h1>
+
+        <div class="conversion">
+
+            <div class="conversion-header">
+                <span>weight</span>
+                <span>To</span>
+
+                <span>Cost($)</span>
+            </div>
+
+            <div class="conversion-body">
+                <input type="number" name="weight">
+
+                <input type="number" name="cost">
+            </div>
+
+            <button class="conversion-btn">
+                Convert
+            </button>
+        </div>
+    </div>
+
+
+    <div class="order-header">
+
+        <span>Track ID</span>
+        <span>Location</span>
+        <span>Destination</span>
+        <span>Cost</span>
+        <span>Weight</span>
+        <span>Status</span>
+        <span>Track</span>
+
+    </div>
+
+    <div class="select">
+
+        <select>
+            <option value="" selected="false">Select</option>
+            <option value="">From Me</option>
+            <option value="">To Me</option>
+        </select>
+    </div>
+
+    <div class="oder-item">
+
+        <div *ngFor="let item of collection | paginate: { itemsPerPage: 3, currentPage: p }">
+
+            <div class="order-body">
+
+                <span>{{item.trackId}}</span>
+                <span>{{item.location}}</span>
+                <span>{{item.destination}}</span>
+                <span>${{200}}</span>
+                <span>{{20}}kg</span>
+                <button  class="status">Pending</button>
+                <fa-icon [icon]="faMapLocation" class="location"> </fa-icon>
+        
+        
+            </div>
+
+            
+        </div>
+
+        <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+    </div>
+
+  </div>
+
+  <div class="help">
+
+  </div>
+</div>

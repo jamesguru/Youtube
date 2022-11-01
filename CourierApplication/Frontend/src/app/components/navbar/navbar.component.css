@@ -24,7 +24,7 @@
   background-color: #d78287;
 
   border: none;
-
+cursor: pointer;
   padding:10px;
   color: #fff;
 
@@ -39,6 +39,7 @@
 .login{
     font-size: 20px;
 
+    cursor: pointer;
     font-weight: 900;
 
     color: #fff;

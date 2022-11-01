@@ -1,1 +1,135 @@
-<p>admin works!</p>
+<div class="container">
+  <div class="menu">
+    <div class="notify">
+      <div class="notify-header">
+        <fa-icon [icon]="faBell" class="notify-icon"> </fa-icon>
+        <span>Notifications</span>
+      </div>
+
+      <span>Daniel received his parcel</span>
+    </div>
+
+    <button  (click)="ShowAdd('open')">Create orders</button>
+    <button>Notifications</button>
+    <button>Orders</button>
+    <button>Cancelled orders</button>
+    <button>Logout</button>
+  </div>
+
+  <div class="main">
+    <div class="stats">
+      <div class="pending">
+        <div class="info">
+          <span>Pending Parcels</span>
+          <span>34</span>
+        </div>
+      </div>
+
+      <div class="delivered">
+        <div class="info">
+        <span>Delivered Parcels</span>
+        <span>30</span>
+
+        </div>
+      </div>
+
+      <div class="user">
+
+        <div class="info">
+
+            <span>Users</span>
+            <span>34</span>
+        </div>
+        
+      </div>
+    </div>
+
+
+    <div class="parcel-header">
+
+        <span>Name</span>
+        <span>TrackId</span>
+        <span>Location</span>
+        <span>Destination</span>
+        <span>status</span>
+        <span>update</span>
+
+    </div>
+
+   
+
+        <input type="text" class="search" placeholder="Search by trackId">
+   
+        <div class="oder-item">
+
+            <div *ngFor="let item of collection | paginate: { itemsPerPage: 3, currentPage: p }">
+    
+                <div class="order-body">
+    
+                    <span>{{item.trackId}}</span>
+                    <span>{{item.location}}</span>
+                    <span>{{item.destination}}</span>
+                    <span>${{200}}</span>
+                    <span>{{20}}kg</span>
+                    <span  class="status">Pending</span>
+                    <span>next</span>
+            
+            
+                </div>
+    
+                
+            </div>
+    
+            <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+        </div>
+    
+      
+  </div>
+</div>
+
+<div class="add-order" *ngIf="showAdd">
+
+    <div class="add-item">
+
+        <fa-icon [icon]="faClose" class="close" (click)="ShowAdd('close')"> </fa-icon>
+
+        <div class="header">
+            create order
+        </div>
+
+        <div class="input-item">
+            <label for="">Name</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">Sender email</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">Receiver email</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">Weight</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">cost</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">Location</label>
+            <input type="text">
+        </div>
+
+        <div class="input-item">
+            <label for="">Destination</label>
+            <input type="text">
+        </div>
+
+        <button>submit</button>
+    </div>
+
+
+
+</div>

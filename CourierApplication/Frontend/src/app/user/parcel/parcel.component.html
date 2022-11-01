@@ -1,0 +1,194 @@
+<div class="container">
+  <div class="parcel">
+
+    <fa-icon [icon]="faHambuger" class="hambuger-icon" (click)="showMenu()"> </fa-icon>
+    
+
+    <div class="header">
+
+        <h1 class="header-order">YOUR ORDERS</h1>
+
+        <div class="conversion">
+
+            <div class="conversion-header">
+                <span>weight(kg)</span>
+                <span>To</span>
+
+                <span>Cost($)</span>
+            </div>
+
+            <div class="conversion-body">
+                <input type="number" name="weight" [(ngModel)] = "weight">
+
+                <input type="number" name="cost" [(ngModel)] ="cost">
+            </div>
+
+            <button class="conversion-btn" (click)="convert()">
+                Convert
+            </button>
+        </div>
+    </div>
+
+
+    <div class="order-header">
+
+        <span>Track ID</span>
+        <span>Location</span>
+        <span>Destination</span>
+        <span>Cost</span>
+        <span>Weight</span>
+        <span>Status</span>
+        <span>Track</span>
+
+    </div>
+
+    <div class="select">
+
+        <select>
+            <option value="" selected="false">Select</option>
+            <option value="">From Me</option>
+            <option value="">To Me</option>
+        </select>
+    </div>
+
+    <div class="oder-item">
+
+        <div *ngFor="let item of collection | paginate: { itemsPerPage: 3, currentPage: p }">
+
+            <div class="order-body">
+
+                <span>{{item.trackId}}</span>
+                <span>{{item.location}}</span>
+                <span>{{item.destination}}</span>
+                <span>${{200}}</span>
+                <span>{{20}}kg</span>
+                <button  class="status">Pending</button>
+                <fa-icon [icon]="faMapLocation" class="location" (click)="showMap()"> </fa-icon>
+        
+        
+            </div>
+
+            
+        </div>
+
+        <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+    </div>
+
+  </div>
+
+  <div class="help">
+
+    <div class="notification">
+
+
+        <div class="notifications-header">
+            <fa-icon [icon]="faBell"> </fa-icon>
+
+
+            <span>Notifications</span>
+
+
+        </div>
+
+        <div class="notifications-body">
+
+            <div class="notify-card">
+                <span>Your order has been delivered</span>
+            </div>
+
+            <div class="notify-card">
+                <span>Your order has been delivered</span>
+            </div>
+
+            <div class="notify-card">
+                <span>Your order has been delivered</span>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="map">
+
+        <google-map [options]="mapOptions" height="400px" width="330px">
+            <map-marker [position]="marker.position"></map-marker>
+        </google-map>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="menubar" *ngIf="showmenu">
+
+    <div class="close">
+
+        <fa-icon [icon]="faClose" (click)="closeMenu()"> </fa-icon>
+
+    </div>
+
+
+    <div class="profile">
+
+        <fa-icon [icon]="faPerson" (click)="closeMenu()" class="user"> </fa-icon>
+
+
+        <ul>
+            <li>Name: James K</li>
+            <li>Setting</li>
+            <li>parcels</li>
+            <li>Track</li>
+            <li (click)="Logout()">Logout</li>
+        </ul>
+
+    </div>
+
+
+
+
+</div>
+
+
+<div class="details" *ngIf="showmap">
+
+    
+
+
+    <div class="details-card">
+        <fa-icon [icon]="faClose" class="close-map" (click)="showMap()"> </fa-icon>
+
+
+        <div class="info">
+
+
+            <ul>
+
+
+                <li>trackId: 25252526262</li>
+                <li>location: Canada</li>
+                <li>destination: Texas</li>
+                <li>cost: $200</li>
+                <li>weight:30</li>
+                <li>status: pending</li>
+                
+            </ul>
+
+        </div>
+
+        <div class="map">
+
+            <google-map [options]="mapOptions" height="400px" width="700px">
+                <map-marker [position]="marker.position"></map-marker>
+            </google-map>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  position: relative;
 }
 
 .parcel {
@@ -15,8 +16,43 @@
 
   margin: 10px;
 
-  background-color: #82d78a;
+  
   height: 100vh;
+}
+
+.notification{
+
+  height: 200px;
+  width: 330px;
+  background-color: #d78287;
+}
+
+.notifications-header{
+
+  color: #fff;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+  margin: 20px;
+
+  font-size: 18px;
+}
+
+.notifications-body{
+
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+
+}
+.notify-card{
+
+  background-color: #fff;
+  padding: 10px;
+  margin:5px;
 }
 
 .hambuger-icon {
@@ -132,9 +168,126 @@
 
   background-color: #d78287;
 }
-.pagination{
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.menubar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+
+  background-color: #82d78a;
+
+  width: 20%;
+  z-index: 999;
+}
+
+.profile {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.profile ul {
+  list-style: none;
+  color: #fff;
+  font-size: 15px;
+}
+
+.profile li {
+  margin-bottom: 30px;
+}
+
+.close {
+  display: flex;
+
+  justify-content: flex-end;
+
+  cursor: pointer;
+  margin: 20px;
+
+  color: #fff;
+  font-size: 30px;
+}
+
+.user {
+  font-size: 40px;
+
+  margin: 20px;
+
+  color: #fff;
+}
+
+.details {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  height: 100%;
+
+  width: 100%;
+
+  z-index: 999;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.details-card {
+  margin: 5% auto;
+  position: relative;
+
+  height: 80vh;
+  background-color: #fff;
+
+  width: 80%;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.info {
+  flex: 1;
+}
+
+.info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  font-size: 15px;
+}
+
+.info li {
+  margin: 20px;
+}
+
+.map {
+  flex: 3;
+}
+
+.close-map{
+  display: flex;
+  justify-content: flex-end;
+
+  color: red;
+  font-size: 30px;
+
+  position:absolute;
+
+  cursor: pointer;
+  top:0;
+  right:0;
 }

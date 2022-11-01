@@ -5,6 +5,8 @@ import { UserRoutingModule } from './user-routing.module';
 import { ParcelComponent } from './parcel/parcel.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {NgxPaginationModule} from 'ngx-pagination'; 
+import { FormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     CommonModule,
     UserRoutingModule,
     FontAwesomeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    GoogleMapsModule
   ]
 })
 export class UserModule { }

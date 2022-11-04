@@ -41,11 +41,11 @@ UPDATE parcels SET status=2 WHERE status=1
 
 -- SIGNIN
 
-CREATE PROCEDURE signin @email NVARCHAR(100), @password NVARCHAR(100)
+CREATE PROCEDURE signin @email NVARCHAR(100)
 
 AS
 
-SELECT * FROM Users WHERE email=@email AND password=@password
+SELECT * FROM Users WHERE email=@email
 
 GO
 
@@ -83,3 +83,22 @@ SELECT * FROM Users WHERE register=0
 CREATE PROCEDURE updateUser @id INT
 AS 
 UPDATE Users SET register=1 WHERE id=@id
+
+
+-- UPDATE PARCEL
+
+CREATE PROCEDURE updateParcel @id int, @status int
+AS 
+
+UPDATE Parcels SET status = @status WHERE id=@id
+
+-- ADD PARCEL
+
+
+CREATE PROCEDURE addParcel @senderEmail NVARCHAR(200),@receiverEmail  NVARCHAR(200), @trackId  NVARCHAR(200),
+@location  NVARCHAR(200),@destination  NVARCHAR(200),@dispatchedDate  NVARCHAR(200),
+@weight  int, @price int,@markers  NVARCHAR(200)
+AS 
+INSERT INTO Parcels (senderEmail,receiverEmail,trackId,location,destination,dispatchedDate,weight,price,markers)
+VALUES(@senderEmail,@receiverEmail,@trackId,@location,@destination,@dispatchedDate,@weight,@price,@markers)
+

@@ -1,11 +1,85 @@
-import express, { Response, Request } from "express";
+import express, { Response, Request, RequestHandler } from "express";
+import Connection from "../helpers/database";
+import { Extended } from "../interfaces/Parcel";
+const db = new Connection();
 
-export const getAllParcels = (req: Request, res: Response) => {
-  res.status(200).json({ message: "request granted" });
+export const getAllParcels = async (req: Extended, res: Response) => {
+  try {
+    const parcel = await db.exec("getAllParcels");
+    res.status(200).json(parcel.recordset);
+  } catch (error) {
+    res.status(500).json({ message: "something went wrong" });
+  }
 };
 
-export const updateParcel = (req: Request, res: Response) => {};
+export const updateParcel: RequestHandler<{ id: string }> = async (
+  req: Request,
+  res: Response
+) => {
+  const id = req.params.id;
+  const { status } = req.body;
 
-export const deleteParcel = (req: Request, res: Response) => {};
+  try {
+    await db.exec("updateParcel", { id, status });
+  } catch (error) {}
+};
 
-export const addPost = (req: Request, res: Response) => {};
+export const deleteParcel: RequestHandler<{ id: string }> = async (
+  req: Request,
+  res: Response
+) => {
+  const id = req.params.id;
+  const { deleted } = req.body;
+
+  try {
+    await db.exec("softdelete", { id, deleted });
+    res.status(201).json({ message: "deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "something went wrong" });
+  }
+};
+
+export const addPost = async (req: Request, res: Response) => {
+  const {
+    senderEmail,
+    receiverEmail,
+    trackId,
+    location,
+    destination,
+    dispatchedDate,
+    weight,
+    price,
+    markers,
+    status,
+    deleted,
+  } = req.body;
+
+  try {
+    await db.exec("addParcel", {
+      senderEmail,
+      receiverEmail,
+      trackId,
+      location,
+      destination,
+      dispatchedDate,
+      weight,
+      price,
+      markers,
+    });
+
+    res.status(201).json({ message: "parcel added successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "something went wrong" });
+  }
+};
+
+export const getParcelsForUser = async (req: Request, res: Response) => {
+  const { email } = req.body;
+
+  try {
+    const parcels = await db.exec("getParcelsForUser", { email });
+    res.status(200).json(parcels.recordset);
+  } catch (error) {
+    res.status(500).json({ message: "something went" });
+  }
+};

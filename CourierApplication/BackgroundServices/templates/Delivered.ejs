@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+    }
+    .container {
+      width: 100%;
+      margin: auto;
+      padding-bottom: 50px;
+    }
+    .login-btn {
+      background-color: crimson;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px;
+      font-size: 18px;
+    }
+    img {
+      animation: progress 0.6s ease infinite alternate;
+    }
+    @keyframes progress {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <body>
+    <table class="container">
+      <tr>
+        <td>
+          <table width="600" style="margin: auto">
+            <tr>
+              <td style="background-color: white; align: center">
+                <h3 style="color: #82d78a; font-size: 45px; font-weight: bold">
+                  SendIt
+                </h3>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px">
+          <table width="600" style="margin: auto">
+            <tr>
+              <td>
+                <img
+                  src="https://www.nutraingredients-usa.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/nutraingredients-usa.com/article/2020/04/15/new-delivery-services-pop-up-amid-social-distancing-era/10914556-1-eng-GB/New-delivery-services-pop-up-amid-social-distancing-era.jpg"
+                  alt="image",
+                  height="600px"
+
+                  width="600px"
+                />
+                <h2 style="font-size: 35px">
+                  Hello, Your parcel <%=trackId%> has been delivered.
+                </h2>
+
+                <p
+                  style="
+                    color: black;
+                    font-size: 20px;
+                    margin: 10px 0px;
+                    font-weight: 400;
+                    max-width: 500px;
+                  "
+                >
+                  You parcel has been delived. The Parcel is <%=trackId%>.Please
+                  login for more information
+                  <a href="https://localhost:4200/">website</a>
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="600" style="margin: auto"></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

@@ -42,9 +42,13 @@ export class ParcelService {
     })
   }
 
-  createParcel(senderEmail:string,receiverEmail:string,
+  createParcel(
+    senderEmail:string,
+    receiverEmail:string,
     trackId:string,
-    location:string,destination:string,dispatchedDate:string,
+    location:string,
+    destination:string,
+    dispatchedDate:string,
     weight:number,
     price:number,
     markers:string,): Observable<{message:string}>{

@@ -60,14 +60,13 @@
     </div>
 
    
-
-        <input type="text" class="search" placeholder="Search by trackId">
+  <input type="text" class="search" placeholder="Search by trackId" [(ngModel)] ="filterText" name="filterText">
    
         <div class="oder-item" *ngIf="parcels$ | async as parcels">
 
           <div *ngIf="parcels.length; else noParcels">
 
-            <div *ngFor="let parcel of parcels | paginate: { itemsPerPage: 3, currentPage: p }">
+            <div *ngFor="let parcel of parcels | paginate: { itemsPerPage: 3, currentPage: p } | search:filterText" >
     
                 <div class="order-body">
     
@@ -114,37 +113,50 @@
             create order
         </div>
 
-        <div class="input-item">
-            <label for="">Name</label>
-            <input type="text">
-        </div>
+        <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+        
         <div class="input-item">
             <label for="">Sender email</label>
-            <input type="text">
+            <input type="text" formControlName="senderEmail">
         </div>
         <div class="input-item">
             <label for="">Receiver email</label>
-            <input type="text">
+            <input type="text" formControlName="receiverEmail">
         </div>
+
+        <div class="input-item">
+          <label for="">trackId</label>
+          <input type="text" formControlName="trackId">
+      </div>
         <div class="input-item">
             <label for="">Weight</label>
-            <input type="text">
+            <input type="number" formControlName="weight">
         </div>
+
         <div class="input-item">
-            <label for="">cost</label>
-            <input type="text">
-        </div>
+          <label for="">Price</label>
+          <input type="number" formControlName="price">
+      </div>
+        
         <div class="input-item">
             <label for="">Location</label>
-            <input type="text">
+            <input type="text" formControlName="location" ngx-google-places-autocomplete
+            (onAddressChange)="handleSenderAddressChange($event)"
+            >
         </div>
 
         <div class="input-item">
             <label for="">Destination</label>
-            <input type="text">
+            <input type="text" formControlName="destination" ngx-google-places-autocomplete
+             (onAddressChange)="handleReceiverAddressChange($event)">
         </div>
+        <div class="input-item">
+          <label for="">Dispatched date</label>
+          <input type="date" formControlName="dispatchedDate">
+      </div>
 
-        <button>submit</button>
+        <button [disabled] ="!form.valid">submit</button>
+      </form>
     </div>
 
 

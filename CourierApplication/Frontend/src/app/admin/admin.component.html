@@ -47,12 +47,15 @@
 
     <div class="parcel-header">
 
-        <span>Name</span>
+       
         <span>TrackId</span>
         <span>Location</span>
         <span>Destination</span>
+        <span>Cost</span>
+        <span>Weight</span>
         <span>status</span>
         <span>update</span>
+        <span>Delete</span>
 
     </div>
 
@@ -60,27 +63,41 @@
 
         <input type="text" class="search" placeholder="Search by trackId">
    
-        <div class="oder-item">
+        <div class="oder-item" *ngIf="parcels$ | async as parcels">
 
-            <div *ngFor="let item of collection | paginate: { itemsPerPage: 3, currentPage: p }">
+          <div *ngIf="parcels.length; else noParcels">
+
+            <div *ngFor="let parcel of parcels | paginate: { itemsPerPage: 3, currentPage: p }">
     
                 <div class="order-body">
     
-                    <span>{{item.trackId}}</span>
-                    <span>{{item.location}}</span>
-                    <span>{{item.destination}}</span>
-                    <span>${{200}}</span>
-                    <span>{{20}}kg</span>
-                    <span  class="status">Pending</span>
-                    <span>next</span>
-            
+                    <span>{{parcel.trackId}}</span>
+                    <span>{{parcel.location}}</span>
+                    <span>{{parcel.destination}}</span>
+                    
+
+                    <span>${{parcel.price}}</span>
+                    <span>{{parcel.weight}}kg</span>
+                    <span  class="{{parcel.status === 0 ? 'pending-parcel' : 'delivered-parcel'}}">{{parcel.status === 0 ? 'Pending' : 'Delivered'}}</span>
+                    <button [disabled] = "parcel.status > 0" class="update" (click)="updateParcel(parcel.id)">{{parcel.status === 0 ? 'update' : 'Delivered'}}</button>
+                    <fa-icon [icon]="faTrash" class="delete" (click)="deleteParcel(parcel.id)"> </fa-icon>
             
                 </div>
     
                 
             </div>
-    
+            
             <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+          </div>
+
+          <ng-template #noParcels>
+
+            <div class="none">
+
+              No parcels
+            </div>
+
+          </ng-template>
         </div>
     
       

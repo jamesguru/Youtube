@@ -48,6 +48,7 @@ export const signIn = async (req: User, res: Response) => {
 export const signUp = async (req: User, res: Response) => {
   const { name, email, password } = req.body;
 
+
   try {
     const { error, value } = registerSchema.validate(req.body);
 
@@ -60,7 +61,8 @@ export const signUp = async (req: User, res: Response) => {
       res.status(200).json({ message: "exist" });
     } else {
       const hashedPassword = await bycrpt.hash(password, 10);
-      await db.exec("signup", { name, email, password });
+      await db.exec("signup", { name, email, password:hashedPassword});
+      res.status(201).json({message:"User registered successfully"})
     }
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });

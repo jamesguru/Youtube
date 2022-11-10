@@ -227,3 +227,37 @@
     font-size:25px;
     cursor: pointer;
 }
+
+.none{
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pending-parcel{
+
+  color: #d1411e;
+  font-weight: bold;
+}
+
+.delivered-parcel{
+
+  color:green;
+  font-weight: bold;
+}
+
+.delete{
+
+  color: red;
+  font-size: 20px;
+  margin-left:30px;
+}
+
+.update{
+
+  border:none;
+  padding:10px;
+  background-color: #d1411e;
+  cursor: pointer;
+}

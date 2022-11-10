@@ -29,6 +29,7 @@ let configurations={
         }
         console.log(info.response);
         
+        
     })
   }
 

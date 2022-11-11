@@ -59,6 +59,8 @@ export const getParcelsForUser = async (req: Request, res: Response) => {
 
   const {email} = req.body;
 
+  console.log(email)
+
 
   try {
 

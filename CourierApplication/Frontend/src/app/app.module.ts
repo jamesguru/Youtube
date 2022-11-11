@@ -9,7 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchPipe } from './pipes/search.pipe';
+
 
 
 
@@ -20,7 +20,7 @@ import { SearchPipe } from './pipes/search.pipe';
     HomepageComponent,
     FooterComponent,
     NotfoundComponent,
-    SearchPipe,
+    
    
     
   ],

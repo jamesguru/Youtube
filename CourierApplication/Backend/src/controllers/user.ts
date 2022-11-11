@@ -48,6 +48,8 @@ export const signIn = async (req: User, res: Response) => {
 export const signUp = async (req: User, res: Response) => {
   const { name, email, password } = req.body;
 
+  console.log(name,email,password)
+
 
   try {
     const { error, value } = registerSchema.validate(req.body);

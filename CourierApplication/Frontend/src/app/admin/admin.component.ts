@@ -7,6 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
 import { Marker } from 'src/interfaces/Marker';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class AdminComponent implements OnInit,OnDestroy {
   filterText:string='';
 
  
-  constructor(private parcelService:ParcelService) { }
+  constructor(private parcelService:ParcelService,private router:Router) { }
 
   p: number = 1;
     
@@ -141,6 +142,12 @@ export class AdminComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
     this.loadParcels()
+  }
+
+  Logout(){
+
+    localStorage.clear()
+      this.router.navigate(['auth/login']);
   }
 
 }

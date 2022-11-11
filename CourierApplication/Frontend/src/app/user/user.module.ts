@@ -7,13 +7,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {NgxPaginationModule} from 'ngx-pagination'; 
 import { FormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps'
+import { FilterPipe } from '../pipes/filter.pipe';
 
 
 @NgModule({
   declarations: [
     
   
-    ParcelComponent
+    ParcelComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { GoogleMapsModule } from '@angular/google-maps'
     FontAwesomeModule,
     NgxPaginationModule,
     FormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    
   ]
 })
 export class UserModule { }

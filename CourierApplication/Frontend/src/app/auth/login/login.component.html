@@ -7,21 +7,22 @@
 
     </div>
 
+    <form action="" #form ="ngForm" (ngSubmit)="onSubmit()">
     <div class="login">
 
         <label for="">Email</label>
-        <input type="text" name="" id="" placeholder="Enter email">
+        <input type="text" name="email" id="" ngModel email required #email="ngModel" placeholder="Enter email">
 
 
         <label for="">Password</label>
 
-        <input type="password" placeholder="Enter password">
+        <input type="password" name="password" placeholder="Enter password" ngModel required #password= "ngModel">
 
-        <button class="btn-login">Login</button>
+        <button class="btn-login" [disabled] ="!form.valid">Login</button>
 
         <span>You don't have an account?</span>
 
 
     </div>
-
+</form>
 </div>

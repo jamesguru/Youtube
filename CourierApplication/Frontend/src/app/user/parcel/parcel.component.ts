@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faBars,faClosedCaptioning,faMapLocation,faClose,faUser,faBell } from '@fortawesome/free-solid-svg-icons';
+import { userInfo } from 'os';
+import { Observable } from 'rxjs';
+import { ParcelService } from 'src/app/Services/parcel.service';
+import { Parcel } from 'src/interfaces/Parcel';
 
 @Component({
   selector: 'app-parcel',
@@ -11,9 +15,11 @@ export class ParcelComponent implements OnInit {
 
 
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private parcelService:ParcelService) { }
 
   ngOnInit(): void {
+
+    this.loadUserParcels();
   }
 
   faHambuger = faBars;
@@ -26,77 +32,36 @@ export class ParcelComponent implements OnInit {
   quote:number=20;
   showmenu:boolean=false;
   showmap:boolean =false;
+  parcels$!:Observable<Parcel[]>;
+  
+location!:string;
+destination!:string;
+trackId!:string;
+parcelweight!:number;
+price!:number;
+status!:number;
+selectedOption:string ='';
+
+user = JSON.parse(localStorage.getItem('user') as string)
+
+email= this.user.email;
+
   mapOptions: any = {
-    center: { lat: 38.9987208, lng: -77.2538699 },
-    zoom : 14
+    center:  {
+      lat: -0.32984428475063204,
+      lng: 36.097950790026374,
+    },
+    zoom : 1
  }
+
+ markerPositions: google.maps.LatLngLiteral[] = [];
+ markerOptions: google.maps.MarkerOptions = { draggable: false };
  marker = {
     position: { lat: 38.9987208, lng: -77.2538699 },
  }
 
   p: number = 1;
-    collection: any[] = [
-
-      {
-        trackId:"1255252",
-        location:"Canada",
-        destination:"Texas",
-        cost:200,
-        weight:30,
-        status:'pending',
-      },
-
-      {
-        trackId:"1255252",
-        location:"Canada",
-        destination:"Texas",
-        cost:200,
-        weight:30,
-        status:'pending',
-      },
-
-      {
-        trackId:"1255252",
-        location:"Canada",
-        destination:"Texas",
-        cost:200,
-        weight:30,
-        status:'pending',
-      },
-      {
-        trackId:"1255252",
-        location:"Canada",
-        destination:"Texas",
-        cost:200,
-        weight:30,
-        status:'pending',
-      },
-      {
-        trackId:"1255252",
-        location:"Canada",
-        destination:"Texas",
-        cost:200,
-        weight:30,
-        status:'pending',
-      },
-      {
-        trackId:"1255252",
-        location:"Canada",
-        destination:"Texas",
-        cost:200,
-        weight:30,
-        status:'pending',
-      },
-      {
-        trackId:"1255252",
-        location:"Canada",
-        destination:"Texas",
-        cost:200,
-        weight:30,
-        status:'pending',
-      }
-    ];  
-
+   
     convert(){
 
       if(this.weight > 0){
@@ -119,13 +84,33 @@ export class ParcelComponent implements OnInit {
 
     Logout(){
 
+      localStorage.clear()
       this.router.navigate(['auth/login']);
     }
 
-    showMap(){
+    showMap(location:string,destination:string,trackId:string,weight:number,price:number,status:number,markers:string){
 
       this.showmap = !this.showmap;
+      
+      this.location = location;
+      this.destination=destination;
+      this.trackId=trackId;
+      this.parcelweight=weight;
+      this.price=price;
+      this.status=status;
+      this.markerPositions=JSON.parse(markers)
+    }
 
+    closeMap(){
+      this.showmap=!this.showmap;
+    }
+    change(event:any){
 
+      this.selectedOption = event.target.value;
+
+    }
+
+    loadUserParcels(){
+      this.parcels$ = this.parcelService.getParcelsForUser(this.email);
     }
 }

@@ -291,3 +291,10 @@
   top:0;
   right:0;
 }
+.none{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}

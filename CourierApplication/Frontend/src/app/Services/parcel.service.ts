@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Parcel } from 'src/interfaces/Parcel';
 
@@ -10,11 +10,15 @@ export class ParcelService {
 
   constructor(private http:HttpClient) { }
 
+token = localStorage.getItem('token') as string;
 
   getParcels():Observable<Parcel[]>{
 
 
-    return this.http.get<Parcel[]>('http://localhost:3000/api/parcel')
+    return this.http.get<Parcel[]>('http://localhost:3000/api/parcel',{
+
+      headers:new HttpHeaders({token:this.token})
+    })
   }
 
 

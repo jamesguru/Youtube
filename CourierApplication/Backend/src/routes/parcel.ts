@@ -4,8 +4,8 @@ import { verifyToken } from '../middlewares/verifytoken';
 
 const route = Router()
 
-route.get('/',getAllParcels);
-route.post('/',addParcel);
+route.get('/',verifyToken,getAllParcels);
+route.post('/',verifyToken,addParcel);
 route.put('/:id',updateParcel);
 route.put('/softdelete/:id',softDelete);
 route.post('/userparcels',getParcelsForUser)

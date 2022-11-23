@@ -1,0 +1,204 @@
+.container{
+
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../../assets/nurse-2019420_1920.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header{
+
+    margin: 50px;
+    
+}
+
+.medical{
+
+    background-color: #1344FF;
+
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+   
+}
+
+.healthcare{
+
+    border: 1px solid #333;
+    padding: 5px;
+   
+    border-radius: 10px;
+    margin: 20px;
+
+}
+
+.doctor{
+    border: 1px solid #333;
+    padding: 5px;
+   
+    border-radius: 10px;
+    margin: 20px; 
+}
+
+.login{
+
+    background-color: #1344FF;
+
+    padding: 5px;
+    color: #fff;
+   cursor: pointer;
+    margin: 20px;
+    width: 200px;
+
+}
+
+.body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15%;
+
+    margin: 30px;
+}
+
+.body h2{
+
+    width: 300px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+}
+
+.body h1{
+
+    font-size: 40px;
+    color: #333;
+    font-weight: bold;
+}
+
+.logo{
+
+    background-color: #1344FF;
+    padding: 50px;
+    color: #fff;
+    font-size: 30px;
+}
+
+.aboutus{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: 70vh;
+
+    margin: 50px;
+}
+
+.aboutus h1{
+   color: #1344FF; 
+   font-size: 75px;
+   font-weight: 900;
+}
+
+.aboutus img{
+
+    object-fit: contain;
+
+    height: 300px;
+    width: 300px;
+}
+.aboutus span{
+
+    width: 300px;
+    background-color: #1344FF;
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.team{
+    display: flex;
+    flex-direction: column;
+}
+.team-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    color: #333;
+}
+
+.team-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 50px;
+}
+
+.team-item{
+
+    height: 500px;
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-item img{
+
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.team-item span{
+
+    width: 400px;
+
+    margin: 20px;
+}
+
+
+.footer{
+
+    height: 50vh;
+    background-color: #c3c4ca;
+    width: 100%;
+}
+
+.footer-item{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   
+    width: 70%;
+}
+
+.footer-item h1{
+
+    margin: 150px;
+
+    width: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.footer-item span{
+
+    font-weight: 900;
+}

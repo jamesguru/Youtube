@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="profile">
+    <div class="hambuger-icon">
+      <fa-icon [icon]="faBars"></fa-icon>
+    </div>
+
+    <div class="profile-item">
+      <img
+        src="https://cdn.pixabay.com/photo/2020/08/21/08/46/african-5505598__340.jpg"
+        alt=""
+      />
+
+      <span class="name">Name: Jane Doe</span>
+      <span class="status">Status:Good</span>
+      <span class="feature">Feature</span>
+
+      <button class="home" routerLink="/patient">
+        <fa-icon [icon]="faHome" class="icon" ></fa-icon> Home
+      </button>
+      <button class="appointment" routerLink="/patient/appointment">
+        <fa-icon [icon]="user" class="icon" ></fa-icon>Book Appointent
+      </button>
+      <button class="drugs">
+        <fa-icon [icon]="hospital" class="icon"></fa-icon>Buy drugs
+      </button>
+      <button class="logout">
+        <fa-icon [icon]="logout" class="icon"></fa-icon>Logout
+      </button>
+    </div>
+  </div>
+</div>

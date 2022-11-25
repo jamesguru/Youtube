@@ -9,7 +9,18 @@ export class HomepageComponent implements OnInit {
 
   constructor() { }
 
+  close = false;
   ngOnInit(): void {
+    setTimeout(()=>{
+
+      this.close = true;
+    },3000)
+  }
+
+
+  showLogin(){
+
+    this.close=!this.close;
   }
 
 }

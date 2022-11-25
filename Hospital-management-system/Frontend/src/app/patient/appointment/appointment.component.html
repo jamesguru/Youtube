@@ -1,0 +1,63 @@
+
+
+<div class="container">
+
+
+
+    <div class="appointment-header">
+
+        <span>Name of doctor</span>
+        <span> Role</span>
+        <span> email</span>
+        <span>book</span>
+
+    </div>
+
+    <div class="appointment-body" *ngFor="let item of collection | paginate: { itemsPerPage: 4, currentPage: p }">
+
+        <div class="appointemnt-item">
+            <span>Dr James</span>
+            <span> Doctor</span>
+            <span> jamesdoe@gmail.com</span>
+            <button (click)="showBook()">book</button> 
+        </div>
+
+        <div class="appointemnt-item">
+            <span>Dr James</span>
+            <span> Doctor</span>
+            <span> jamesdoe@gmail.com</span>
+            <button (click)="showBook()">book</button> 
+        </div>
+
+        <div class="appointemnt-item">
+            <span>Dr James</span>
+            <span> Doctor</span>
+            <span> jamesdoe@gmail.com</span>
+            <button  (click)="showBook()">book</button> 
+        </div>
+
+
+    </div>
+
+    <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+</div>
+
+
+<div class="book" *ngIf="close">
+
+   
+    <div class="book-container">
+
+
+        <h2 class="book-header">Are you sure you want to book an appointment?</h2>
+        <input type="date" class="data">
+
+        <div class="book-cancel">
+            <button (click)="showBook()">close</button>
+            <button>book</button>
+        </div>
+
+    </div>
+  
+    
+</div>

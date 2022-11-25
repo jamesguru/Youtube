@@ -1,0 +1,120 @@
+.container{
+
+    margin: 30px;
+    position: relative;
+}
+
+.appointment-header{
+
+    background-color:#ebedf9;
+    margin: 20px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.appointment-header span{
+    font-weight: 900;
+    font-size: 15px;
+
+}
+
+.appointemnt-item
+{
+
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 900;   
+}
+
+.appointemnt-item button{
+
+    padding: 5px;
+    color: #fff;
+    background-color: #d1411e;
+    border: none;
+    font-size: 15px;
+    font-weight: 900;
+
+    cursor: pointer;
+    width: 100px;
+}
+
+.pagination{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.book{
+
+    position: absolute;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    right: 0;
+}
+
+
+
+.book-container{
+
+    background-color: #fff;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   position: absolute;
+   top: 5%;
+   right: 5%;
+
+}
+
+.book-header{
+
+    margin: 30px;
+    font-weight: bold;
+    width: 300px;
+}
+
+.book-cancel{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 40px;
+   
+}
+
+.book-cancel button:first-child{
+
+    margin-right: 50px;
+    padding: 5px;
+    width: 100px;
+    font-weight: 900;
+    font-size: 18px;
+    border: none;
+
+    cursor: pointer;
+}
+
+.book-cancel button:last-child{
+
+    margin-right: 100px;
+    padding: 5px;
+    width: 100px;
+    font-weight: 900;
+    font-size: 18px;
+    border: none;
+background-color: #d1411e;
+color: #fff;
+    cursor: pointer;
+}

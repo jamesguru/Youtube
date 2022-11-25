@@ -1,0 +1,82 @@
+.profile {
+  height: 90vh;
+  width: 250px;
+  background-color: #fff;
+  margin: 20px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+ 
+}
+
+.profile-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.profile img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+
+  margin: 20px;
+}
+
+.name {
+  color: green;
+  font-weight: 900;
+  font-size: 18px;
+
+  animation: inProgress 1s ease alternate infinite;
+}
+
+@keyframes inProgress {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.status {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 10px;
+}
+
+.feature {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.profile button {
+  background-color: #00adb5;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 200px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.profile button:last-child {
+  background-color: #d1411e;
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.hambuger-icon{
+
+    display: flex;
+    font-size: 20px;
+    margin: 20px;
+    justify-content: flex-end;
+    align-items: center;
+}

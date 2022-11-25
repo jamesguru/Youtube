@@ -1,3 +1,8 @@
+.wrapper{
+
+    position: relative;
+}
+
 .container{
 
     height: 100vh;
@@ -30,7 +35,7 @@
 
 .healthcare{
 
-    border: 1px solid #333;
+    border: 1px solid #444;
     padding: 5px;
    
     border-radius: 10px;
@@ -51,6 +56,7 @@
     background-color: #1344FF;
 
     padding: 5px;
+    
     color: #fff;
    cursor: pointer;
     margin: 20px;
@@ -201,4 +207,81 @@
 .footer-item span{
 
     font-weight: 900;
+}
+
+.login-container{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.login-item{
+
+    height: 500px;
+    width: 600px;
+    margin: 50px;
+    background-color: #fff;
+}
+
+.cancel-button{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.close{
+
+    background-color: red;
+    border: none;
+    font-size: 15px;
+    margin: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+}
+
+.login-input{
+
+    margin: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-input h1{
+
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+.login-input input{
+
+    padding: 10px;
+    width: 250px;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.login-input button{
+     border:  none;
+     width: 250px;
+     padding: 10px;
+     color: #fff;
+     font-size: 15px;
+     font-weight: bold;
+     background-color: #1344FF;
+     margin: 15px;
+}
+
+.login-input span{
+    font-weight: bold;
+    color: #222;
 }

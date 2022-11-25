@@ -4,7 +4,9 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 
 const routes: Routes = [
 
-  {path:'',component:HomepageComponent}
+  {path:'',component:HomepageComponent},
+
+  { path: 'patient', loadChildren: () => import('./patient/patient.module').then(m => m.PatientModule) }
 ];
 
 @NgModule({

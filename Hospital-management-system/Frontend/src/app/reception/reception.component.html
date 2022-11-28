@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="navigation">
+    <span>Patients</span>
+    <span>Doctors</span>
+    <fa-icon [icon]="faUser" class="icon"></fa-icon>
+    <span>Welcome Jane Doe</span>
+    <span>Logout</span>
+  </div>
+
+  <div class="patient-header">
+    <span>Name</span>
+    <span>Location</span>
+    <span>Room Admitted</span>
+    <span>Admission no</span>
+    <span>Id no</span>
+    <span>Status</span>
+  </div>
+
+  <div class="add-patient" (click)="showAdd()">
+    <fa-icon [icon]="faAd" class="add-icon"></fa-icon>
+    <span>Add Patient</span>
+  </div>
+
+  <div class="search">
+    <input type="text" placeholder="Search patient admission no" />
+  </div>
+
+  <div
+    class="patient-body"
+    *ngFor="
+      let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+    "
+  >
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>MVR300</span>
+      <span>RVS/123</span>
+      <span>3527373</span>
+      <span>GOOD</span>
+    </div>
+
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>MVR300</span>
+      <span>RVS/123</span>
+      <span>3527373</span>
+      <span>GOOD</span>
+    </div>
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>MVR300</span>
+      <span>RVS/123</span>
+      <span>3527373</span>
+      <span>GOOD</span>
+    </div>
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>MVR300</span>
+      <span>RVS/123</span>
+      <span>3527373</span>
+      <span>GOOD</span>
+    </div>
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>MVR300</span>
+      <span>RVS/123</span>
+      <span>3527373</span>
+      <span>GOOD</span>
+    </div>
+    <pagination-controls
+      (pageChange)="p = $event"
+      class="pagination"
+    ></pagination-controls>
+  </div>
+</div>
+
+<div class="add-modal" *ngIf="close">
+  <div class="add-item">
+    <div class="add-header">
+        <span>Add patient</span>
+        <button class="close" (click)="showAdd()">Close</button>
+    </div>
+    <div class="input-item">
+      <label for="">Name</label>
+      <input type="text" />
+    </div>
+    <div class="input-item">
+      <label for="">Email</label>
+      <input type="text" />
+    </div>
+
+    <div class="input-item">
+      <label for="">Resident area</label>
+      <input type="text" />
+    </div>
+
+    <div class="input-item">
+      <label for="">Room no</label>
+      <input type="text" />
+    </div>
+
+    <div class="input-item">
+      <label for="">Admission no</label>
+      <input type="text" />
+    </div>
+    <div class="input-item">
+      <label for="">Id no</label>
+      <input type="text" />
+    </div>
+
+    <button class="submit">Submit</button>
+  </div>
+</div>

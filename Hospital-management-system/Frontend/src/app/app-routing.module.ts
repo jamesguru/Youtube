@@ -6,7 +6,9 @@ const routes: Routes = [
 
   {path:'',component:HomepageComponent},
 
-  { path: 'patient', loadChildren: () => import('./patient/patient.module').then(m => m.PatientModule) }
+  { path: 'patient', loadChildren: () => import('./patient/patient.module').then(m => m.PatientModule) },
+
+  { path: 'reception', loadChildren: () => import('./reception/reception.module').then(m => m.ReceptionModule) }
 ];
 
 @NgModule({

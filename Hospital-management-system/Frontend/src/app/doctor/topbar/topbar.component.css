@@ -1,0 +1,35 @@
+.container {
+  margin: 30px;
+}
+
+.navigation {
+  background-color: #ebedf9;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 1024px;
+font-weight: 900;
+
+}
+
+.navigation span{
+    cursor: pointer;
+}
+
+.navigation span:hover{
+
+    color: #d1411e;
+}
+
+.navigation span:last-child{
+
+    color: #d1411e;
+    cursor: pointer;
+}
+
+.user-icon{
+
+    font-size: 25px;
+    margin-right: 10px;
+}

@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="patient-header">
+    <span>Name</span>
+    <span>Location</span>
+    <span>Room Admitted</span>
+    <span>Admission No</span>
+    <span>Id no</span>
+    <span>Status</span>
+    <span>Add diagnosis</span>
+  </div>
+
+  <div class="search">
+    <input type="text" placeholder="Search patient by admission no" />
+  </div>
+
+  <div
+    class="patient-body"
+    *ngFor="
+      let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+    "
+  >
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>RVS34</span>
+      <span>MVR/003</span>
+      <span>536363</span>
+      <span>GOOD</span>
+      <button (click)="showAddTreat()">Add</button>
+    </div>
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>RVS34</span>
+      <span>MVR/003</span>
+      <span>536363</span>
+      <span>GOOD</span>
+      <button (click)="showAddTreat()">Add</button>
+    </div>
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>RVS34</span>
+      <span>MVR/003</span>
+      <span>536363</span>
+      <span>GOOD</span>
+      <button (click)="showAddTreat()">Add</button>
+    </div>
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>RVS34</span>
+      <span>MVR/003</span>
+      <span>536363</span>
+      <span>GOOD</span>
+      <button (click)="showAddTreat()">Add</button>
+    </div>
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>RVS34</span>
+      <span>MVR/003</span>
+      <span>536363</span>
+      <span>GOOD</span>
+      <button (click)="showAddTreat()">Add</button>
+    </div>
+    <div class="patient-item">
+      <span>Jane Doe</span>
+      <span>TEXAS</span>
+      <span>RVS34</span>
+      <span>MVR/003</span>
+      <span>536363</span>
+      <span>GOOD</span>
+      <button (click)="showAddTreat()">Add</button>
+    </div>
+  </div>
+  <pagination-controls
+    (pageChange)="p = $event"
+    class="pagination"
+  ></pagination-controls>
+</div>
+
+
+<div class="add-treatment" *ngIf="close">
+
+    <div class="add-item">
+
+        <div class="close" >
+            <h3>Add treatment</h3>
+            <button (click)="showAddTreat()">Close</button>
+        </div>
+
+        <div class="input-item">
+            <label for="">Name of treatment</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">Drug administered</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">Doctor name</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">Describe treatment</label>
+            <textarea></textarea>
+        </div>
+        <div class="input-item">
+            <label for="">status</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">Bill</label>
+            <input type="text">
+        </div>
+        <div class="input-item">
+            <label for="">Date</label>
+            <input type="date">
+        </div>
+
+        <button class="submit">Submit</button>
+    </div>
+
+</div>

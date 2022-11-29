@@ -1,0 +1,92 @@
+
+/* slides.component.scss */
+
+@import '~swiper/swiper.min.css';
+@import '~swiper/modules/navigation/navigation.min.css';
+@import '~swiper/modules/pagination/pagination.min.css';
+
+/* slides.component.scss */
+
+.my-swiper {
+    height: 100%;
+}
+
+.swiper-slide-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ 
+  color: #222;
+  height: 200%;
+  
+  margin: auto;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+.swiper-slide-container img{
+
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.swiper-slide-container span{
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.image{
+
+   display: flex;
+    justify-content: center;
+   
+}
+
+.blue-circle{
+
+    height: 350px;
+    width: 350px;
+    background-color: skyblue;
+    border-radius: 50%;
+    position: relative;
+    z-index: -99;
+    
+    
+}
+.image img{
+
+    height: 300px;
+    width: 300px;
+     position: absolute;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   padding: 50px;
+    object-fit: cover;
+  
+}
+
+.container{
+
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    width: 60%;
+
+    
+}
+
+.swiper-button-prev, .swiper-button-next{
+
+    color: #444;
+
+}

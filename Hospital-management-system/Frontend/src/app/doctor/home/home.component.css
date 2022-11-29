@@ -1,0 +1,109 @@
+.container {
+  margin: 30px;
+  position: relative;
+}
+
+.patient-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 1024px;
+  font-weight: 900;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+.search input {
+  padding: 5px;
+  width: 400px;
+}
+
+.patient-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 1024px;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.patient-item button {
+  padding: 5px;
+  color: #fff;
+  background-color: #d1411e;
+  border: none;
+  font-weight: 900;
+
+  width: 100px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.add-treatment {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.add-item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 25%;
+  background-color: #fff;
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+.close button {
+  background-color: red;
+  color: #fff;
+  font-weight: 900;
+  border: none;
+  padding: 5px;
+}
+
+.input-item {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+  font-weight: 900;
+}
+
+.input-item input {
+  width: 300px;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  color: #fff;
+  background-color: #1344ff;
+  width: 300px;
+  font-weight: 900;
+  cursor:pointer;
+}

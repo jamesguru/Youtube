@@ -1,0 +1,37 @@
+.container{
+
+    background-color: #ebedf9;
+    height: 100vh;
+}
+
+.nav{
+
+    padding: 100px 20px;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-icon{
+
+    font-size: 50px;
+}
+
+.name{
+
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.nav span{
+
+    margin: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.icon{
+    font-size: 20px;
+    margin-right: 30px;
+}

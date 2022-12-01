@@ -1,0 +1,46 @@
+.container{
+
+    margin: 50px;
+}
+
+.treatment-header{
+
+    background-color: #ebedf9;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 900;
+}
+
+.search{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search input{
+
+    width: 50%;
+    padding: 10px;
+    margin: 20px;
+}
+
+.treatment-item{
+ padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 18px;
+
+}
+
+.pagination{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 20px;
+}

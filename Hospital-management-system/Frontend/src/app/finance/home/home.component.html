@@ -1,0 +1,59 @@
+<div class="container">
+   
+    <div class="treatment-header">
+        <span>Treatment</span>
+        <span>Drug</span>
+        <span>Doctor</span>
+        <span>Bill</span>
+        <span>Date</span>
+        <span>paid</span>
+    </div>
+
+    <div class="search">
+
+        <input type="text" placeholder="Search bill by date">
+    </div>
+    <div class="treatment-body"  *ngFor="
+    let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+  ">
+        <div class="treatment-item">
+        <span>Therapy</span>
+        <span>Brufen</span>
+        <span>Dr James</span>
+        <span>$200</span>
+        <span>2023-01-01</span>
+        <span>Pending</span>
+        </div>
+
+        <div class="treatment-item">
+            <span>Therapy</span>
+            <span>Brufen</span>
+            <span>Dr James</span>
+            <span>$200</span>
+            <span>2023-01-01</span>
+            <span>Pending</span>
+            </div>
+
+            <div class="treatment-item">
+                <span>Therapy</span>
+                <span>Brufen</span>
+                <span>Dr James</span>
+                <span>$200</span>
+                <span>2023-01-01</span>
+                <span>Pending</span>
+                </div>
+
+                <div class="treatment-item">
+                    <span>Therapy</span>
+                    <span>Brufen</span>
+                    <span>Dr James</span>
+                    <span>$200</span>
+                    <span>2023-01-01</span>
+                    <span>Pending</span>
+                    </div>
+    </div>
+    <pagination-controls
+    (pageChange)="p = $event"
+    class="pagination"
+  ></pagination-controls>
+</div>

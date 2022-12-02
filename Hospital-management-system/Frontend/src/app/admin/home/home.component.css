@@ -1,0 +1,61 @@
+.container{
+
+    margin: 20px;
+}
+
+.charts{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pie{
+
+    height: 300px;
+    width: 450px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.line{
+
+    height: 300px;
+    width: 450px; 
+    box-shadow: 10px 10px 5px #aaaaaa;
+     
+}
+
+.requests{
+
+    display: flex;
+    align-items: center;
+    margin: 50px;
+    justify-content: space-evenly;
+}
+
+h2{
+    color: #222;
+ 
+    margin: 20px 0px;
+}
+
+.newuser{
+
+    font-weight: bold;
+}
+
+.approval-item{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.approval-item button{
+
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -1,0 +1,118 @@
+.container {
+  margin: 30px;
+  position: relative;
+}
+
+.users-header {
+  background-color: #203354;
+  padding: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #aaa;
+  font-weight: 900;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.search input {
+  padding: 7px;
+  width: 50%;
+  font-weight: 500;
+}
+
+.users-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.users-body button{
+
+    padding: 5px;
+    cursor: pointer;
+    background-color: #d1411e;
+    color: #fff;
+    font-weight: 900;
+    border: none;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    font-weight: bold;
+}
+
+
+.delete{
+position: absolute;
+top: 0;
+right: 0;
+height: 100%;
+width: 100%;
+z-index: 999;
+background-color: rgba(0,0,0,0.3);
+
+}
+
+.delete-item{
+
+    background-color: #fff;
+    height: 100vh;
+    width: 15%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.confirm{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50%;
+}
+.confirm h4{
+
+    color: #222;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.buttons{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.close{
+
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.delete-btn{
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+    background-color: red;
+    color: #fff;
+    margin: 20px;
+    
+}

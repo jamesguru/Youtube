@@ -8,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
 
   constructor() { }
-
+  p: number = 1;
+  collection: any[] = [1,2];
+  close=false;
   ngOnInit(): void {
+  }
+
+
+  showDelete(){
+
+    this.close = !this.close;
   }
 
 }

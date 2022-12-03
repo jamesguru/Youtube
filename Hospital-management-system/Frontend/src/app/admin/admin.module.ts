@@ -9,7 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChartModule } from 'angular-highcharts';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,9 @@ import { ChartModule } from 'angular-highcharts';
     CommonModule,
     AdminRoutingModule,
     FontAwesomeModule,
-    ChartModule
+    ChartModule,
+    NgxPaginationModule
+    
   ]
 })
 export class AdminModule { }

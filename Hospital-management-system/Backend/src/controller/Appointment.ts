@@ -1,13 +1,16 @@
 import  {Request,Response} from 'express'
+import Connection from '../helpers/dabatase'
 
-export const createAppointment = (req:Request,res:Response) => {
+const db = new Connection()
+
+export const createAppointment = async (req:Request,res:Response) => {
 
 
-    res.status(200).json({message:'you hit the appointment'})
 
+   
 }
 
 export const getAppointments =(req:Request,res:Response) =>{
 
-    res.status(200).json({message:'you hit the appointment'})
+
 }

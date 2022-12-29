@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+    }
+    .container {
+      width: 100%;
+      margin: auto;
+      padding-bottom: 50px;
+    }
+    .login-btn {
+      background-color: crimson;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px;
+      font-size: 18px;
+    }
+    img {
+      animation: progress 0.6s ease alternate infinite;
+      object-fit:cover;
+    }
+    h2{
+      color: #82d78a;  
+    }
+    @keyframes progress {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <body>
+    <table class="container">
+      <tr>
+        <td>
+          <table width="600" style="margin: auto">
+            <tr>
+              <td style="background-color: white; align: center">
+                <p style="color: #82d78a; font-size: 45px; font-weight: bold">
+                  Medics Venns
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px">
+          <table width="600" style="margin: auto">
+            <tr>
+              <td>
+                <img
+
+                
+                  src="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420__340.jpg"
+                  alt="image"
+                  height="500px"
+                  width="500px"
+                />
+                <span style="font-size: 30px;">Welcome <%=name%> to Medics Venns your health is in our hand now calm down.</span>
+
+                <p
+                  style="
+                    color: black;
+                    font-size: 20px;
+                    margin: 10px 0px;
+                    font-weight: 400;
+                    max-width: 500px;
+                  "
+                >
+                  
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="600" style="margin: auto"></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

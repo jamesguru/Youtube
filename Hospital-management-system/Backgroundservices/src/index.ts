@@ -1,6 +1,10 @@
 import express from 'express';
 import cron  from 'node-cron';
 import dotenv from 'dotenv'
+import ReportEMail from './EmailService/AdmissionReport';
+import WelcomeEmail from './EmailService/WelcomeEmail';
+import AppointmentEmail from './EmailService/Appoitment';
+import diagnosisEmail from './EmailService/Diagnosis';
 const app = express();
 dotenv.config();
 
@@ -8,7 +12,12 @@ dotenv.config();
 const run = () => {
     
     cron.schedule('* * * * *', () => {
-        console.log('running a task every minute');
+        
+        //ReportEMail();
+        WelcomeEmail();
+        AppointmentEmail();
+        diagnosisEmail();
+
       });
 
 }

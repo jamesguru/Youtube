@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 const db = new Connection();
 
 export const signUp = async (req: Request, res: Response) => {
-  const { name, email, password } = req.body;
+  const { name, email, password,role } = req.body;
 
   try {
     const { error, value } = registerSchema.validate(req.body);
@@ -18,7 +18,7 @@ export const signUp = async (req: Request, res: Response) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    await db.exec("signUp", { name, email, password: hashedPassword });
+    await db.exec("signUp", { name, email, password: hashedPassword,role});
 
     res.status(201).json({ message: "Registered successfully" });
   } catch (error) {

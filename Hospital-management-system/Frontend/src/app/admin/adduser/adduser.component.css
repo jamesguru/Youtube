@@ -1,31 +1,57 @@
-.container {
-  margin: 20px;
+.container{
+
+  margin: 5px 30px;
+
   display: flex;
+
+  flex-direction: column;
+
+ 
+}
+
+h2{
+
+  margin: 5px;
+  color: #333;
+}
+.add-item{
+
+  margin: 20px;
+
+  display: flex;
+
   flex-direction: column;
 }
 
-.container h3 {
-  margin-bottom: 20px;
+.add-item input{
+
+  width: 300px;
+
+padding: 5px;
+  
 }
 
-.container label {
-  font-weight: 900;
-}
+.container button{
 
-.container input,
-select {
-  width: 30%;
-font-weight: 900;
-  margin: 10px 0px;
-  padding: 3px;
-}
-
-.container button {
-  width: 30%;
   padding: 10px;
-  background-color: #203354;
+
   border: none;
-  color: #fff;
-  cursor: pointer;
-  margin: 20px 0px;
+
+  color:#fff;
+
+  font-size: 15px;
+
+  background-color: #203354;
+margin-top: 20px;
+
+  width: 300px;
+
+  cursor:pointer;
 }
+
+.add-item select{
+
+  width: 300px;
+  padding: 5px;
+}
+

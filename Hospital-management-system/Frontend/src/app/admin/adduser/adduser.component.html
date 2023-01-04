@@ -1,25 +1,44 @@
-
 <div class="container">
 
-    <h3>Add User</h3>
+    <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Add User</h2>
 
-    <label for="">Name</label>
-    <input type="text" name="" >
-    <label for="">Email</label>
-    <input type="text" name="" >
-    <label for="">Password</label>
-    <input type="text" name="" >
+    <div class="add-item">
 
-    <label for="">Role</label>
+        <label for="">Name</label>
 
-    <select name="" id="">
+        <input type="text" formControlName="name">
+    </div>
 
-        <option value="">Admin</option>
-        <option value="">Reception</option>
-        <option value="">Doctor</option>
-        <option value="">Patient</option>
-        
-    </select>
+    <div class="add-item">
 
-    <button>Submit</button>
+        <label for="">Email</label>
+
+        <input type="text"  formControlName="email">
+    </div>
+
+    <div class="add-item">
+
+        <label for="">Password(User Id no)</label>
+
+        <input type="text" formControlName="password">
+    </div>
+
+  <div class="add-item">
+
+        <label for="">Role</label>
+
+        <select name="" id="" (change)="selectRole($event)" selected>
+
+            <option value="admin">Admin</option>
+            <option value="patient">Patient</option>
+            <option value="reception">Reception</option>
+            <option value="finance">Finance</option>
+            <option value="doctor">Doctor</option>
+        </select>
+    </div>
+
+
+    <button [disabled]="!form.valid">Submit</button>
+</form>
 </div>

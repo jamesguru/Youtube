@@ -12,78 +12,42 @@
     <input type="text" placeholder="Search user by id no" />
   </div>
 
-  <div
-    class="users"
-    *ngFor="
-    let item of collection | paginate: { itemsPerPage: 1, currentPage: p}"
-  >
-    <div class="users-body">
-      <span>James Doe</span>
-      <span>jamesdoe@gmail.com</span>
-      <span>doctor</span>
-      <span>Rv120000</span>
-      <span>345</span>
-      <button (click)="showDelete()">delete</button>
+  <div *ngIf="users$ | async as users">
+    <div *ngIf="users.length">
+      <div
+        class="users"
+        *ngFor="
+          let item of users
+            | paginate : { itemsPerPage: 5, currentPage: p }
+        "
+      >
+        <div class="users-body">
+          <span>{{item.name}}</span>
+          <span>{{item.email}}</span>
+          <span>{{item.role}}</span>
+          <span>Rv120000</span>
+          <span>345</span>
+          <button (click)="assignId(item.id)">delete</button>
+        </div>
+      </div>
     </div>
 
-    <div class="users-body">
-      <span>James Doe</span>
-      <span>jamesdoe@gmail.com</span>
-      <span>doctor</span>
-      <span>Rv120000</span>
-      <span>345</span>
-      <button (click)="showDelete()">delete</button>
-    </div>
-
-    <div class="users-body">
-      <span>James Doe</span>
-      <span>jamesdoe@gmail.com</span>
-      <span>doctor</span>
-      <span>Rv120000</span>
-      <span>345</span>
-      <button (click)="showDelete()">delete</button>
-    </div>
-
-    <div class="users-body">
-      <span>James Doe</span>
-      <span>jamesdoe@gmail.com</span>
-      <span>doctor</span>
-      <span>Rv120000</span>
-      <span>345</span>
-      <button (click)="showDelete()">delete</button>
-    </div>
-
-    <div class="users-body">
-      <span>James Doe</span>
-      <span>jamesdoe@gmail.com</span>
-      <span>doctor</span>
-      <span>Rv120000</span>
-      <span>345</span>
-      <button (click)="showDelete()">delete</button>
-    </div>
+    <pagination-controls
+      (pageChange)="p = $event"
+      class="pagination"
+    ></pagination-controls>
   </div>
 
-  <pagination-controls
-    (pageChange)="p = $event"
-    class="pagination"
-  ></pagination-controls>
-</div>
-
-
-<div class="delete" *ngIf="close">
-
+  <div class="delete" *ngIf="close">
     <div class="delete-item">
+      <div class="confirm">
+        <h4>Are you sure you want to delete the user.</h4>
 
-        <div class="confirm">
-
-            <h4>Are you sure you want to delete the user.</h4>
-
-            <div class="buttons">
-
-                <button class="close" (click)="showDelete()">Close</button>
-                <button class="delete-btn" (click)="showDelete()">delete</button>
-            </div>
+        <div class="buttons">
+          <button class="close" (click)="showDelete()">Close</button>
+          <button class="delete-btn" (click)="showDelete()">delete</button>
         </div>
-
+      </div>
     </div>
+  </div>
 </div>

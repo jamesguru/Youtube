@@ -10,6 +10,7 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChartModule } from 'angular-highcharts';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AdminRoutingModule,
     FontAwesomeModule,
     ChartModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    FormsModule
     
   ]
 })

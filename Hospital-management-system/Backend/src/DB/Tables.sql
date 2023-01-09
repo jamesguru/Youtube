@@ -6,7 +6,7 @@ CREATE TABLE diagnosis(
     patient_email VARCHAR(500) NOT NULL,
     bill int NOT NULL,
     date VARCHAR(200) NOT NULL,
-    paid int DEFAULT 0 NOT NULL,
+    paid int DEFAULT 0,
     description VARCHAR(5000) NOT NULL,
     patient_status VARCHAR(200) NOT NULL,
     issent int DEFAULT 0 NOT NULL 

@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     DoctorRoutingModule,
     FontAwesomeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class DoctorModule { }

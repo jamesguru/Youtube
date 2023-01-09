@@ -4,6 +4,8 @@ import Connection from "../helpers/dabatase";
 const db = new Connection();
 
 export const createDiagnosis = async (req: Request, res: Response) => {
+
+
   const {
     name_treatment,
     drug_administered,
@@ -16,6 +18,9 @@ export const createDiagnosis = async (req: Request, res: Response) => {
     patient_status,
   } = req.body;
 
+
+
+  console.log(req.body)
   try {
     await db.exec("addDiagnosis", {
       name_treatment,
@@ -31,7 +36,9 @@ export const createDiagnosis = async (req: Request, res: Response) => {
 
     res.status(201).json({ message: "diagnosis has been added successfully" });
   } catch (error) {
-    res.status(500).json({ error: "something went wrong" });
+
+    console.log(error)
+    res.json({ error: error });
   }
 };
 

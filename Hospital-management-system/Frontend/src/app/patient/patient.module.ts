@@ -9,6 +9,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChartModule } from 'angular-highcharts';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     PatientRoutingModule,
     FontAwesomeModule,
     ChartModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ]
 })
 export class PatientModule { }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
+import { Observable } from 'rxjs';
+import { Diagnosis } from 'src/app/interfaces/Diagnosis';
+import { DiagnosisService } from 'src/app/services/diagnosis.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,12 +10,15 @@ import { Chart } from 'angular-highcharts';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private diagnosiService:DiagnosisService) { }
 
   ngOnInit(): void {
+
+    this.getDiagnosis();
   }
   p: number = 1;
   collection: any[] = [1];
+  diagnosis$!:Observable<Diagnosis[]>;
   donutCharts = new Chart({
     chart: {
       type: 'pie',
@@ -78,5 +84,13 @@ export class HomeComponent implements OnInit {
       } as any
     ]
   });
+
+
+  getDiagnosis(){
+
+    const email='ffdf@sdddddddddfdf';
+
+    this.diagnosis$= this.diagnosiService.getDiagnosisForUser(email);
+  }
 
 }

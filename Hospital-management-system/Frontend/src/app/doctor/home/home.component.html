@@ -13,67 +13,26 @@
     <input type="text" placeholder="Search patient by admission no" />
   </div>
 
-  <div
-    class="patient-body"
-    *ngFor="
-      let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
-    "
-  >
-    <div class="patient-item">
-      <span>Jane Doe</span>
-      <span>TEXAS</span>
-      <span>RVS34</span>
-      <span>MVR/003</span>
-      <span>536363</span>
-      <span>GOOD</span>
-      <button (click)="showAddTreat()">Add</button>
-    </div>
-    <div class="patient-item">
-      <span>Jane Doe</span>
-      <span>TEXAS</span>
-      <span>RVS34</span>
-      <span>MVR/003</span>
-      <span>536363</span>
-      <span>GOOD</span>
-      <button (click)="showAddTreat()">Add</button>
-    </div>
-    <div class="patient-item">
-      <span>Jane Doe</span>
-      <span>TEXAS</span>
-      <span>RVS34</span>
-      <span>MVR/003</span>
-      <span>536363</span>
-      <span>GOOD</span>
-      <button (click)="showAddTreat()">Add</button>
-    </div>
-    <div class="patient-item">
-      <span>Jane Doe</span>
-      <span>TEXAS</span>
-      <span>RVS34</span>
-      <span>MVR/003</span>
-      <span>536363</span>
-      <span>GOOD</span>
-      <button (click)="showAddTreat()">Add</button>
-    </div>
-    <div class="patient-item">
-      <span>Jane Doe</span>
-      <span>TEXAS</span>
-      <span>RVS34</span>
-      <span>MVR/003</span>
-      <span>536363</span>
-      <span>GOOD</span>
-      <button (click)="showAddTreat()">Add</button>
-    </div>
-    <div class="patient-item">
-      <span>Jane Doe</span>
-      <span>TEXAS</span>
-      <span>RVS34</span>
-      <span>MVR/003</span>
-      <span>536363</span>
-      <span>GOOD</span>
-      <button (click)="showAddTreat()">Add</button>
+  <div *ngIf="patients$ | async as patients">
+    <div *ngIf="patients.length"></div>
+    <div
+      class="patient-body"
+      *ngFor="
+        let patient of patients | paginate : { itemsPerPage: 5, currentPage: p }
+      "
+    >
+      <div class="patient-item">
+        <span>{{patient.name}}</span>
+        <span>{{patient.resident_area}}</span>
+        <span>{{patient.room_admitted}}</span>
+        <span>{{patient.room_admitted}}</span>
+        <span>{{patient.id_no}}</span>
+        <span>{{patient.status}}</span>
+        <button (click)="showAddTreat(patient.email)">Add</button>
+      </div>
     </div>
   </div>
+
   <pagination-controls
     (pageChange)="p = $event"
     class="pagination"
@@ -81,45 +40,45 @@
 </div>
 
 
-<div class="add-treatment" *ngIf="close">
-
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="add-treatment" *ngIf="close">
     <div class="add-item">
-
-        <div class="close" >
-            <h3>Add treatment</h3>
-            <button (click)="showAddTreat()">Close</button>
-        </div>
-
-        <div class="input-item">
-            <label for="">Name of treatment</label>
-            <input type="text">
-        </div>
-        <div class="input-item">
-            <label for="">Drug administered</label>
-            <input type="text">
-        </div>
-        <div class="input-item">
-            <label for="">Doctor name</label>
-            <input type="text">
-        </div>
-        <div class="input-item">
-            <label for="">Describe treatment</label>
-            <textarea></textarea>
-        </div>
-        <div class="input-item">
-            <label for="">status</label>
-            <input type="text">
-        </div>
-        <div class="input-item">
-            <label for="">Bill</label>
-            <input type="text">
-        </div>
-        <div class="input-item">
-            <label for="">Date</label>
-            <input type="date">
-        </div>
-
-        <button class="submit">Submit</button>
+      <div class="close">
+        <h3>Add treatment</h3>
+        <button (click)="closeAddTreat()">Close</button>
+      </div>
+  
+      <div class="input-item">
+        <label for="">Name of treatment</label>
+        <input type="text" formControlName="name_treatment" />
+      </div>
+      <div class="input-item">
+        <label for="">Drug administered</label>
+        <input type="text"  formControlName="drug_administered"/>
+      </div>
+      <div class="input-item">
+        <label for="">Doctor name</label>
+        <input type="text"  formControlName="doctor_name" />
+      </div>
+      <div class="input-item">
+        <label for="">Describe treatment</label>
+        <input formControlName="description" />
+      </div>
+      <div class="input-item">
+        <label for="">status</label>
+        <input type="text"  formControlName="patient_status"/>
+      </div>
+      <div class="input-item">
+        <label for="">Bill</label>
+        <input type="text"  formControlName="bill"/>
+      </div>
+      <div class="input-item">
+        <label for="">Date</label>
+        <input type="date"  formControlName="date"/>
+      </div>
+  
+      <button class="submit" >Submit</button>
     </div>
-
-</div>
+  </div>
+  
+</form>

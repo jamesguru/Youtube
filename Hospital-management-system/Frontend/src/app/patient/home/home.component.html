@@ -1,61 +1,45 @@
-
 <div class="container">
+  <div class="charts">
+    <div class="pie" [chart]="donutCharts"></div>
 
-    <div class="charts">
+    <div class="line" [chart]="lineChart"></div>
+  </div>
 
-        <div class="pie" [chart] ="donutCharts">
-
-        </div>
-
-        <div class="line" [chart]="lineChart">
-
-        </div>
-    </div>
-    
-    <div class="treatment-header">
-
-        <span>Name of treatment</span>
-        <span>Drug administered</span>
-        <span>Doctor</span>
-        <span>Bill</span>
-        <span>Date</span>
-        <span>Paid</span>
-    </div>
+  <div class="treatment-header">
+    <span>Name of treatment</span>
+    <span>Drug administered</span>
+    <span>Doctor</span>
+    <span>Bill</span>
+    <span>Date</span>
+    <span>Paid</span>
+  </div>
 
 
-    <div class="treatment-body" *ngFor="let item of collection | paginate: { itemsPerPage: 2, currentPage: p }">
 
+  <div *ngIf="diagnosis$ | async as diagnosis">
+
+    <div *ngIf="diagnosis.length">
+        <div
+        class="treatment-body"
+        *ngFor="
+          let item of diagnosis | paginate : { itemsPerPage: 4, currentPage: p }
+        "
+      >
         <div class="treatment-item">
-
-        <span>administered brufen</span>
-        <span>Brufen</span>
-        <span>Dr Doe</span>
-        <span>$200</span>
-        <span>2022-12-01</span>
-        <button>Pending</button>
+          <span>{{diagnosis.name_treatment}}</span>
+          <span>{{diagnosis.drug_administered}}</span>
+          <span>{{diagnosis.doctor_name}}</span>
+          <span>${{diagnosis.bill}}</span>
+          <span>{{diagnosis.date}}</span>
+          <button>Pending</button>
         </div>
-
-        <div class="treatment-item">
-
-            <span>administered brufen</span>
-            <span>Brufen</span>
-            <span>Dr Doe</span>
-            <span>$200</span>
-            <span>2022-12-01</span>
-            <button>Pending</button>
-     </div>
-
-     <div class="treatment-item">
-
-        <span>administered brufen</span>
-        <span>Brufen</span>
-        <span>Dr Doe</span>
-        <span>$200</span>
-        <span>2022-12-01</span>
-        <button>Pending</button>
-        </div>
-
+      </div>
     </div>
+  </div>
+  
 
-    <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+  <pagination-controls
+    (pageChange)="p = $event"
+    class="pagination"
+  ></pagination-controls>
 </div>

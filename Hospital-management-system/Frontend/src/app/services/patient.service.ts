@@ -21,6 +21,8 @@ export class PatientService {
     email: string
   ): Observable<{ message: string }> {
 
+console.log(name,resident_area,room_admitted,email)
+
     return this.http.post<{ message: string }>('http://localhost:8000/api/patients', {
 
       name,
@@ -33,7 +35,7 @@ export class PatientService {
   }
 
 
-  getAllPatients():Observable<Patient[]>{
+  getAllPatients(): Observable<Patient[]> {
 
     return this.http.get<Patient[]>('http://localhost:8000/api/patients')
   }

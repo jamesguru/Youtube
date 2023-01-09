@@ -4,8 +4,10 @@ import Connection from "../helpers/dabatase";
 const db = new Connection();
 
 export const createPatient = async (req: Request, res: Response) => {
-  const { name, resident_area, room_admitted, admission_no, id_no, email } =
+  const {name, resident_area, room_admitted, admission_no,id_no,email} =
     req.body;
+
+    console.log(name,resident_area,room_admitted,admission_no,id_no,email)
 
   try {
     await db.exec("addPatient", {

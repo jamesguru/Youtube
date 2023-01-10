@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
 
@@ -15,7 +16,7 @@ const routes: Routes = [
 
   { path: 'finance', loadChildren: () => import('./finance/finance.module').then(m => m.FinanceModule) },
 
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'admin',canActivate:[AdminGuard],loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   {
     path:'**', component:NotfoundComponent
   }

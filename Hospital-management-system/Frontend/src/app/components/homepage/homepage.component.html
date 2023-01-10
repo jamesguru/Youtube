@@ -92,27 +92,29 @@
     </div>
 </div>
 
-<div class="login-container" *ngIf="close">
+<form action="" #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="login-container" *ngIf="close">
 
-    <div class="login-item">
-
-        <div class="cancel-button">
-            <button class="close" (click)="showLogin()">Close</button>
+        <div class="login-item">
+    
+            <div class="cancel-button">
+                <button class="close" (click)="showLogin()">Close</button>
+            </div>
+    
+            <div class="login-input">
+    
+                <h1>Vigen Medics</h1>
+    
+                <input type="text" placeholder="Enter email" ngModel name="email" email required #email="ngModel">
+                <input type="password" placeholder="Enter password" ngModel name="password" required #password="ngModel">
+    
+                <button class="login-btn" [disabled]="!form.valid">Login</button>
+    
+                <span>Ask to be registered.</span>
+            </div>
+    
+    
         </div>
-
-        <div class="login-input">
-
-            <h1>Vigen Medics</h1>
-
-            <input type="text" placeholder="Enter email">
-            <input type="password" placeholder="Enter password">
-
-            <button class="login-btn">Login</button>
-
-            <span>Ask to be registered.</span>
-        </div>
-
-
+    
     </div>
-
-</div>
+</form>

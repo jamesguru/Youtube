@@ -13,7 +13,7 @@ const run = () => {
     
     cron.schedule('* * * * *', () => {
         
-        //ReportEMail();
+        ReportEMail();
         WelcomeEmail();
         AppointmentEmail();
         diagnosisEmail();
